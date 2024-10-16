@@ -1,35 +1,40 @@
 import React, { useEffect, useState } from "react";
+import { BiMoon, BiSun } from "react-icons/bi";
 
 const ThemeToggle = () => {
-  const [isDarkMode, setIsDarkMode] = useState(false);
+  const [theme, setTheme] = useState<string | null>(null);
+
+  useEffect(() => {
+    const root = window.document.documentElement;
+    const initialTheme = root.classList.contains("dark") ? "dark" : "light";
+    setTheme(initialTheme);
+  }, []);
 
   const toggleTheme = () => {
-    setIsDarkMode(!isDarkMode);
-  };
+    const root = window.document.documentElement;
+    const isDark = root.classList.contains("dark");
 
-  useEffect(() => {
-    if (isDarkMode) {
-      document.documentElement.classList.add("dark");
-      localStorage.setItem("theme", "dark");
-    } else {
-      document.documentElement.classList.remove("dark");
+    if (isDark) {
+      root.classList.remove("dark");
+      setTheme("light");
       localStorage.setItem("theme", "light");
+    } else {
+      root.classList.add("dark");
+      setTheme("dark");
+      localStorage.setItem("theme", "dark");
     }
-  }, [isDarkMode]);
-
-  useEffect(() => {
-    const savedTheme = localStorage.getItem("theme");
-    if (savedTheme === "dark") {
-      setIsDarkMode(true);
-    }
-  }, []);
+  };
 
   return (
     <button
       onClick={toggleTheme}
-      className="p-2 bg-gray-200 dark:bg-gray-700 rounded"
+      className="text-2xl p-2 bg-gray-200 dark:bg-gray-700 rounded-md"
     >
-      {isDarkMode ? "Light Mode" : "Dark Mode"}
+      {theme === "dark" ? (
+        <BiSun className="text-pokemonWhite" />
+      ) : (
+        <BiMoon className="text-gray-900" />
+      )}
     </button>
   );
 };

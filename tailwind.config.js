@@ -16,6 +16,9 @@ export default {
         pokemonBlack: '#101820',
         pokemonWhite: '#FFFFFF',
       },
+      screens: {
+        xs: '300px',
+      },
     },
   },
   plugins: [],

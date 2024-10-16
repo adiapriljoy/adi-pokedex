@@ -1,16 +1,25 @@
 import React from "react";
+import LoadingBallText from "./components/LoadingBallText";
+import LoadingText from "./components/LoadingText";
 
-const Loading = () => {
+interface LoadingProps {
+  loadingType?: string;
+}
+const Loading = ({ loadingType = "loadingPage" }: LoadingProps) => {
+  const getLoadingDisplay = () => {
+    switch (loadingType) {
+      case "loadingText":
+        return <LoadingText />;
+      case "loadingBall":
+        return;
+      default:
+        return <LoadingBallText />;
+    }
+  };
+
   return (
-    <div className="flex items-center justify-center h-screen bg-gray-100">
-      <div className="flex items-center justify-center space-x-2">
-        <div className="flex items-center justify-center h-screen mr-4">
-          <div className="loader">
-            <div className="ball"></div>
-          </div>
-        </div>
-        <span className="text-pokemonRed font-bold text-2xl">Loading...</span>
-      </div>
+    <div className="pb-1 pt-1 dark:bg-gray-900">
+      {getLoadingDisplay()}
     </div>
   );
 };

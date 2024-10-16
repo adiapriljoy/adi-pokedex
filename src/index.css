@@ -20,7 +20,7 @@
   position: absolute;
   top: 0;
   left: 0;
-  box-shadow: 0 0 0 5px theme("colors.pokemonBlack");
+  box-shadow: 0 0 0 3px theme("colors.pokemonBlack");
   animation: spin 1s infinite linear;
 }
 
@@ -42,5 +42,31 @@
   }
   100% {
     transform: rotate(360deg);
+  }
+}
+
+.loading-text {
+  font-style: italic;
+  font-size: 1.5rem;
+  margin-top: 1rem;
+}
+
+.ellipsis {
+  display: inline-block;
+  animation: ellipsis 1.5s infinite;
+}
+
+@keyframes ellipsis {
+  0%, 20% {
+    opacity: 0;
+  }
+  20%, 40% {
+    opacity: 1;
+  }
+  40%, 60% {
+    opacity: 1;
+  }
+  60%, 100% {
+    opacity: 0;
   }
 }

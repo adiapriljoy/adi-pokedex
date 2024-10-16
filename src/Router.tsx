@@ -4,6 +4,7 @@ import Loading from "./components/Loading";
 import NotFoundPage from "./pages/NotFoundPage";
 
 const HomePage = lazy(() => import("./pages/HomePage"));
+const PokemonDetailsPage = lazy(() => import("./pages/PokemonDetailsPage"));
 
 export const Router = createBrowserRouter([
   {
@@ -14,6 +15,14 @@ export const Router = createBrowserRouter([
         element: (
           <Suspense fallback={<Loading />}>
             <HomePage />
+          </Suspense>
+        ),
+      },
+      {
+        path: "/pokemon/:name",
+        element: (
+          <Suspense fallback={<Loading />}>
+            <PokemonDetailsPage />
           </Suspense>
         ),
       },
