@@ -18,9 +18,7 @@ const Loading = ({ loadingType = "loadingPage" }: LoadingProps) => {
   };
 
   return (
-    <div className="pb-1 pt-1 dark:bg-gray-900">
-      {getLoadingDisplay()}
-    </div>
+    <div className="pb-1 pt-1 dark:bg-gray-900">{getLoadingDisplay()}</div>
   );
 };
 

@@ -1,6 +1,6 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { ToastContainer } from "react-toastify";
-import useCaptureForm from "../../../hooks/useCaptureForm";
+import { useCaptureForm } from "../../../hooks/useCaptureForm";
 import { IPokemonCapture } from "../../../models/interface";
 
 interface CaptureProps {
@@ -8,6 +8,7 @@ interface CaptureProps {
 }
 
 const CaptureForm = ({ pokemonId }: CaptureProps) => {
+  const [maxDate, setMaxDate] = useState("");
   const {
     nickname,
     setNickname,
@@ -17,6 +18,14 @@ const CaptureForm = ({ pokemonId }: CaptureProps) => {
     handleSubmit,
     isCaptured,
   } = useCaptureForm(pokemonId);
+
+  useEffect(() => {
+    const currentDate = new Date();
+    const year = currentDate.getFullYear();
+    const month = String(currentDate.getMonth() + 1).padStart(2, "0");
+    const day = String(currentDate.getDate()).padStart(2, "0");
+    setMaxDate(`${year}-${month}-${day}`);
+  }, []);
 
   useEffect(() => {
     if (isCaptured) {
@@ -67,6 +76,7 @@ const CaptureForm = ({ pokemonId }: CaptureProps) => {
           className="border border-gray-300 dark:border-gray-600 rounded p-2 w-full"
           required
           disabled={isCaptured}
+          max={maxDate}
         />
       </div>
       <button

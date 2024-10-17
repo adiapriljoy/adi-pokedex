@@ -8,7 +8,9 @@ const LoadingBallText = () => {
           <div className="ball"></div>
         </div>
       </div>
-      <span className="text-pokemonBlack dark:text-pokemonWhite font-bold text-2xl">Loading...</span>
+      <span className="text-pokemonBlack dark:text-pokemonWhite font-bold text-2xl">
+        Loading...
+      </span>
     </div>
   );
 };

@@ -1,11 +1,14 @@
 import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 
-const useCaptureForm = (pokemonId: number) => {
+export const useCaptureForm = (pokemonId: number) => {
     const [nickname, setNickname] = useState("");
     const [dateCaptured, setDateCaptured] = useState("");
     const [isSubmit, setIsSubmit] = useState(false);
     const [isCaptured, setIsCaptured] = useState(false);
+
+    const navigate = useNavigate();
 
     useEffect(() => {
         const existingCaptures = localStorage.getItem("capturedPokemon");
@@ -46,6 +49,10 @@ const useCaptureForm = (pokemonId: number) => {
             theme: "light",
         });
 
+        setTimeout(() => {
+            navigate("/");
+        }, 3000);
+
         setNickname("");
         setDateCaptured("");
         setIsSubmit(false);
@@ -62,5 +69,3 @@ const useCaptureForm = (pokemonId: number) => {
         isCaptured,
     };
 };
-
-export default useCaptureForm;

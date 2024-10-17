@@ -23,13 +23,12 @@ const HomePage = () => {
 
   useEffect(() => {
     filterPokemonList(pokemonList);
-  });
-
-  useEffect(() => {
-    filterPokemonList(pokemonList);
   }, [pokemonList, filterPokemonList]);
 
-  const displayedPokemonList = useFilteredPokemon(filteredPokemonList, showCaptured);
+  const displayedPokemonList = useFilteredPokemon(
+    filteredPokemonList,
+    showCaptured
+  );
 
   return (
     <div className="min-h-screen bg-pokemonWhite dark:bg-gray-900 p-4 sm:px-16">

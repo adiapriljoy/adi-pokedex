@@ -33,7 +33,7 @@ const ScrollToTopButton = () => {
           className="fixed bottom-4 right-4 bg-pokemonGreen text-pokemonWhite p-2 rounded-full shadow-md hover:bg-green-600 transition"
           aria-label="Scroll to top"
         >
-          <FaArrowUpLong/>
+          <FaArrowUpLong />
         </button>
       )}
     </>
