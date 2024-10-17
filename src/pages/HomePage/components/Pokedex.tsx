@@ -56,7 +56,7 @@ const Pokedex: React.FC<PokedexProps> = ({ pokemonList, isGridView }) => {
                 </span>
               ) : (
                 <span className="bg-red-200 text-red-800 rounded-full px-2 py-1 text-xs font-semibold">
-                  Not Captured
+                  Uncaptured
                 </span>
               )}
             </div>
@@ -90,7 +90,7 @@ const Pokedex: React.FC<PokedexProps> = ({ pokemonList, isGridView }) => {
                   </span>
                 ) : (
                   <span className="bg-red-200 text-red-800 rounded-full px-2 py-1 text-xs font-semibold">
-                    Not Captured
+                    Uncaptured
                   </span>
                 )}
               </div>
