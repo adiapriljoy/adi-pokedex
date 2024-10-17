@@ -50,7 +50,7 @@ export const useCaptureForm = (pokemonId: number) => {
         });
 
         setTimeout(() => {
-            navigate("/adi-pokedex");
+            navigate("/");
         }, 3000);
 
         setNickname("");

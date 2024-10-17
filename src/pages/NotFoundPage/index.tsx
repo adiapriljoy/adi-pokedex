@@ -5,7 +5,7 @@ const NotFoundPage: React.FC = () => {
   const navigate = useNavigate();
 
   const handleBackToLandingPage = () => {
-    navigate("/adi-pokedex");
+    navigate("/");
   };
 
   return (

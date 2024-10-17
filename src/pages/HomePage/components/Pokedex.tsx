@@ -11,7 +11,7 @@ const Pokedex: React.FC<PokedexProps> = ({ pokemonList, isGridView }) => {
   const navigate = useNavigate();
 
   const handlePokemonClick = (pokemon: IPokemonDetail) => {
-    navigate(`/adi-pokedex/pokemon/${pokemon.name}`, { state: { pokemon } });
+    navigate(`/pokemon/${pokemon.name}`, { state: { pokemon } });
   };
 
   const capturedPokemonData = localStorage.getItem("capturedPokemon");
