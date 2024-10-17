@@ -7,12 +7,11 @@ interface PokedexProps {
   pokemonList: IPokemonDetail[];
   isGridView: boolean;
 }
-
-const Pokedex = ({ pokemonList, isGridView }: PokedexProps) => {
+const Pokedex: React.FC<PokedexProps> = ({ pokemonList, isGridView }) => { 
   const navigate = useNavigate();
 
   const handlePokemonClick = (pokemon: IPokemonDetail) => {
-    navigate(`/pokemon/${pokemon.name}`, { state: { pokemon } });
+    navigate(`/adi-pokedex/pokemon/${pokemon.name}`, { state: { pokemon } });
   };
 
   const capturedPokemonData = localStorage.getItem("capturedPokemon");
@@ -83,7 +82,7 @@ const Pokedex = ({ pokemonList, isGridView }: PokedexProps) => {
                   Nickname: {captureDetails ? captureDetails.nickname : "N/A"}
                 </p>
                 <p className="text-sm dark:text-pokemonWhite">
-                  Date: {captureDetails ? captureDetails.date : "N/A"}
+                  Date: {captureDetails ? captureDetails.dateCaptured : "N/A"}
                 </p>
                 {captureDetails ? (
                   <span className="bg-green-200 text-green-800 rounded-full px-2 py-1 text-xs font-semibold">

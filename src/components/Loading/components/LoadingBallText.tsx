@@ -1,6 +1,6 @@
 import React from "react";
 
-const LoadingBallText = () => {
+const LoadingBallText: React.FC = () => {
   return (
     <div className="fixed inset-0 flex items-center justify-center space-x-2 bg-gray-200 dark:bg-gray-600 opacity-90">
       <div className="flex items-center justify-center h-screen mr-4">

@@ -1,11 +1,11 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 
-const NotFoundPage = () => {
+const NotFoundPage: React.FC = () => {
   const navigate = useNavigate();
 
   const handleBackToLandingPage = () => {
-    navigate("/");
+    navigate("/adi-pokedex");
   };
 
   return (

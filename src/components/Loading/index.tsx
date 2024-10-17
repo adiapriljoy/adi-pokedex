@@ -5,7 +5,8 @@ import LoadingText from "./components/LoadingText";
 interface LoadingProps {
   loadingType?: string;
 }
-const Loading = ({ loadingType = "loadingPage" }: LoadingProps) => {
+
+const Loading: React.FC<LoadingProps> = ({ loadingType = "loadingPage" }) => {
   const getLoadingDisplay = () => {
     switch (loadingType) {
       case "loadingText":

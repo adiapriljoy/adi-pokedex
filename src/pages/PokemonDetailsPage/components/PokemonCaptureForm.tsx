@@ -7,7 +7,7 @@ interface CaptureProps {
   pokemonId: number;
 }
 
-const CaptureForm = ({ pokemonId }: CaptureProps) => {
+const CaptureForm: React.FC<CaptureProps> = ({ pokemonId }) => {
   const [maxDate, setMaxDate] = useState("");
   const {
     nickname,

@@ -9,7 +9,7 @@ import ScrollToTopButton from "../../components/Customs/ScrollToTopButton";
 import PokemonCaptureForm from "./components/PokemonCaptureForm";
 import Loading from "../../components/Loading";
 
-const PokemonDetailsPage = () => {
+const PokemonDetailsPage: React.FC = () => {
   const navigate = useNavigate();
   const location = useLocation();
   const { pokemon }: { pokemon: IPokemonDetail } = location.state || {};

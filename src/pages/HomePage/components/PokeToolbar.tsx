@@ -11,14 +11,14 @@ interface PokeToolbarProps {
   setSearchTerm: (term: string) => void;
 }
 
-const PokeToolbar = ({
+const PokeToolbar: React.FC<PokeToolbarProps> = ({
   isGridView,
   toggleView,
   showCaptured,
   toggleFilter,
   searchTerm,
   setSearchTerm,
-}: PokeToolbarProps) => {
+}) => {
   return (
     <div className="flex flex-col-reverse sm:flex-row items-start justify-between">
       <div className="flex items-center">

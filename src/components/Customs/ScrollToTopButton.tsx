@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { FaArrowUpLong } from "react-icons/fa6";
 
-const ScrollToTopButton = () => {
+const ScrollToTopButton: React.FC = () => {
   const [isVisible, setIsVisible] = useState(false);
 
   const handleScroll = () => {

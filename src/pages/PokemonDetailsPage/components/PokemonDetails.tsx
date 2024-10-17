@@ -7,7 +7,7 @@ interface PokemonDetailsProps {
   pokemonDetails: IPokemonDetails | undefined;
 }
 
-const PokemonDetails = ({ pokemonDetails }: PokemonDetailsProps) => {
+const PokemonDetails: React.FC<PokemonDetailsProps> = ({ pokemonDetails }) => {
   return (
     <div className="bg-white dark:bg-gray-800 rounded-lg shadow-md p-6 mt-4 w-full max-w-md">
       <h2 className="text-lg font-semibold dark:text-pokemonWhite mb-2">

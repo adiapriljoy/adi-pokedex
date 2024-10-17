@@ -8,7 +8,7 @@ const PokemonDetailsPage = lazy(() => import("./pages/PokemonDetailsPage"));
 
 export const Router = createBrowserRouter([
   {
-    path: "/",
+    path: "/adi-pokedex",
     children: [
       {
         path: "",
@@ -19,7 +19,7 @@ export const Router = createBrowserRouter([
         ),
       },
       {
-        path: "/pokemon/:name",
+        path: "pokemon/:name",
         element: (
           <Suspense fallback={<Loading />}>
             <PokemonDetailsPage />
@@ -27,12 +27,12 @@ export const Router = createBrowserRouter([
         ),
       },
       {
-        path: "/404",
+        path: "404",
         element: <NotFoundPage />,
       },
       {
         path: "*",
-        element: <Navigate to="/404" replace />,
+        element: <Navigate to="/adi-pokedex/404" replace />,
       },
     ],
   },

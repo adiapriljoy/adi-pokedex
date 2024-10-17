@@ -54,5 +54,5 @@ export interface IPokemonDetails {
 export interface IPokemonCapture {
     pokemonId: number;
     nickname: string;
-    date: string;
+    dateCaptured: string;
 }

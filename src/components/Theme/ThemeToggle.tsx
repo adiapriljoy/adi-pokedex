@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { BiMoon, BiSun } from "react-icons/bi";
 
-const ThemeToggle = () => {
+const ThemeToggle: React.FC = () => {
   const [theme, setTheme] = useState<string | null>(null);
 
   useEffect(() => {

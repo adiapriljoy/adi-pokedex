@@ -9,7 +9,7 @@ import { useSearchPokemonList } from "../../hooks/useSearchPokemonList";
 import { useScrollLoadMore } from "../../hooks/useScrollLoadMore";
 import { useFilteredPokemon } from "../../hooks/useFilteredPokemon";
 
-const HomePage = () => {
+const HomePage: React.FC = () => {
   const { pokemonList, loadMore, isPokemonListLoading } = useLoadMore();
   const { searchTerm, setSearchTerm, filteredPokemonList, filterPokemonList } =
     useSearchPokemonList();
